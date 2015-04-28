@@ -191,4 +191,25 @@ RSpec.describe Need, type: :model do
     end
   end
 
+  describe '.with_tag_id multiple' do
+    let(:tag) { create(:tag) }
+    let(:tag2) { create(:tag) }
+
+    it 'returns needs tagged with the given tag IDs' do
+      other_needs = create_list(:need, 5)
+
+      expected_need = create(:need)
+      tagging = create(:tagging, tag: tag, need: expected_need)
+
+      expected_need2 = create(:need)
+      tagging2 = create(:tagging, tag: tag2, need: expected_need2)
+
+      # simulate comma-delimited query, e.g. maslow.local/needs?tag_id=1,2
+      results = Need.with_tag_id("#{tag.id},#{tag2.id}")
+      expect(results).to include(expected_need)
+      expect(results).to include(expected_need2)
+      expect(results).to_not include(other_needs)
+    end
+  end
+
 end
