@@ -14,7 +14,11 @@ class Need < ActiveRecord::Base
 
   default_scope ->{ order('id desc') }
   scope :with_tag_id, -> (tag_id) {
-    joins(:taggings).where("taggings.tag_id" => tag_id)
+    if tag_id.is_a? String
+      joins(:taggings).where("taggings.tag_id in (?)", tag_id.split(',').map(&:to_i))
+    else
+      joins(:taggings).where("taggings.tag_id in (?)", tag_id)
+    end
   }
 
   validates :role, :goal, :benefit, presence: true
