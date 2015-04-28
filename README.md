@@ -1,4 +1,4 @@
-# Standalone Maslow [![Build Status](https://travis-ci.org/JordanHatch/maslow-standalone.png?branch=master)](https://travis-ci.org/JordanHatch/maslow-standalone)
+# Standalone Maslow [![Build Status](https://travis-ci.org/crossgovernmentservices/maslow-standalone.png?branch=master)](https://travis-ci.org/crossgovernmentservices/maslow-standalone)
 
 This is a fork of [Maslow](https://github.com/alphagov/maslow), an app built by
 the Government Digital Service to track the user needs behind GOV.UK.
