@@ -1,10 +1,10 @@
-<h2>Filter</h2>
+<h2>Filter by tag</h2>
 
 <%= form_tag(:controller => "needs", :action => "filter") do %>
 
-  <%= label_tag(:q, "Filter on tags") %>
-
   <% TagType.all.each do |tag_type| %>
+
+  <%= label_tag(:q, tag_type.name) %>
     <%= select_tag(
         :tag_id,
         options_from_collection_for_select(tag_type.tags, :id, :name, params[:tag_id]),
