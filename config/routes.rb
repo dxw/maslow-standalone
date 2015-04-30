@@ -29,6 +29,10 @@ Maslow::Application.routes.draw do
       delete :closed, to: 'needs#reopen', as: :reopen
       get :close_as_duplicate, path: 'close-as-duplicate'
     end
+
+    collection do
+      post :filter
+    end
   end
 
   resource :user, only: [] do

@@ -2,7 +2,9 @@ class NeedsController < ApplicationController
   layout 'skeleton', only: :show
   expose(:need)
 
-  has_scope :with_tag_id, as: :tag_id, type: :default
+  has_scope :with_tag_id, as: :tag_id, type: :array
+
+  skip_authorization_check :only => :filter
 
   class Http404 < StandardError
   end
@@ -114,6 +116,10 @@ class NeedsController < ApplicationController
       flash[:error] = "There was a problem reopening the need"
       render :show, status: 422
     end
+  end
+
+  def filter
+    redirect_to needs_path({tag_id: params[:tag_id]})
   end
 
 private

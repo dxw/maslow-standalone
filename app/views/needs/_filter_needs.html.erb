@@ -1,0 +1,21 @@
+<h2>Filter</h2>
+
+<%= form_tag(:controller => "needs", :action => "filter") do %>
+
+  <%= label_tag(:q, "Filter on tags") %>
+
+  <% TagType.all.each do |tag_type| %>
+    <%= select_tag(
+        :tag_id,
+        options_from_collection_for_select(tag_type.tags, :id, :name, params[:tag_id]),
+        multiple: true,
+        class: 'tags',
+        'data-module' => 'chosen',
+        style: 'width: 100%'
+      )
+    %>
+  <% end %>
+
+  <%= submit_tag("Filter", class: 'btn, btn-primary') %>
+
+<% end %>
