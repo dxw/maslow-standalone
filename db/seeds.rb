@@ -1,0 +1,5 @@
+Impact.create(description: "No impact")
+Impact.create(description: "Noticed only by an SME")
+Impact.create(description: "Noticed by most civil servants")
+Impact.create(description: "Has consequences for all civil servants")
+Impact.create(description: "Has serious consequences for civil servants")

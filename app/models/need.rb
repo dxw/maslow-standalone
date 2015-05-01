@@ -8,6 +8,8 @@ class Need < ActiveRecord::Base
   has_many :decisions
   has_many :activity_items
 
+  has_one :impact
+
   belongs_to :canonical_need, class_name: 'Need'
 
   before_validation :remove_blank_met_when_criteria

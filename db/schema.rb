@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401122658) do
+ActiveRecord::Schema.define(version: 20150430152045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 20150401122658) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "impacts", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "needs", force: :cascade do |t|
     t.string  "role",                              null: false
     t.string  "goal",                              null: false
@@ -45,7 +51,10 @@ ActiveRecord::Schema.define(version: 20150401122658) do
     t.integer "yearly_site_views"
     t.integer "yearly_need_views"
     t.integer "yearly_searches"
+    t.integer "impact_id"
   end
+
+  add_index "needs", ["impact_id"], name: "index_needs_on_impact_id", using: :btree
 
   create_table "tag_types", force: :cascade do |t|
     t.string   "identifier", null: false

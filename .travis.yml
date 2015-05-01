@@ -14,3 +14,4 @@ deploy:
   api_key:
     secure: jGhIw9ZHrmpwIEYzuQazgEN2cW2xjLEc5Dh8eBEIW8rRZqGYBOPkpEhF6XfZUy/lSkZC6EsYJX9Vu39m8FiSWGPYnn2KoPXcQETXsru8FAesUTcpXr8HfqtL5ecY7mgmgDEdKCGEhXbD+IXKzwPnrtbgRhnVSCrKCAFCZBysYc0=
   app: gds-civil-service-maslow
+  run: "rake db:migrate"

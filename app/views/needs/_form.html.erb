@@ -45,6 +45,11 @@
       :as => :text,
       :input_html => { :class => 'input-md-8', :rows => 3 }
     %>
+    <%= f.input :impact_id,
+      :label => "Impact if need is not met. <br/><span class='optional'>(optional)</span>".html_safe,
+      :as => :select,
+      :collection => Impact.pluck(:description, :id)
+    %>
   <% end %>
 
   <%= render layout: 'workflow_footer' do %>
