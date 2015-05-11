@@ -15,12 +15,31 @@ it easier for other teams to set up their own instances.
 
 ## Getting started
 
+You can get started locally, or on [Heroku](https://heroku.com) with one-click deployment.
+
+Note the app also comes with a Dockerfile, with an [example docker-compose configuration](https://github.com/crossgovernmentservices/dev-env/blob/4302de4f08b5178c771216db33ddacf1ce9ba808/docker-compose.yml#L1-L17)
+
+## Getting started locally
+
     # Installs gem dependencies, creates database tables, and creates the first
     # user account
     bin/setup
 
     # Starts the Maslow server
     foreman start
+
+## Getting started on Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+Follow the on-screen instructions, and once the app has successfully installed, you will be redirected to a login screen.
+
+At this point, you have either provided Heroku with a subdomain for your app, or Heroku chose a name for you at random (e.g. **agile-wave-4184**)
+
+Add a new user account using the following Rake task, e.g. user Jane with email address **jane@example.org** using password **a_random_password** for the Maslow instance at https://agile-wave-4184.herokuapp.com
+
+    heroku  run bin/rake "users:create_first_user[Jane,jane@example.org,a_random_password]" --app agile-wave-4184
+    
 
 ## Configuration
 
