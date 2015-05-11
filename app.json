@@ -1,0 +1,13 @@
+{
+  "name": "Maslow",
+  "description": "With which to create and manage user needs.",
+  "repository": "https://github.com/crossgovernmentservices/maslow-standalone",
+  "logo": "https://raw.githubusercontent.com/crossgovernmentservices/maslow-standalone/master/app/assets/images/logo.svg",
+  "keywords": ["ruby", "rails", "postgresql"],
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "scripts": {
+    "postdeploy": "bin/rake db:setup"
+  }
+}
