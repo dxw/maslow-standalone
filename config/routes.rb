@@ -51,5 +51,7 @@ Maslow::Application.routes.draw do
     root to: 'root#index'
   end
 
-  root :to => redirect('/needs')
+  get 'home/index'
+
+  root 'home#index'
 end
