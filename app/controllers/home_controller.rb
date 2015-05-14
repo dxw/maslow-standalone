@@ -1,7 +1,8 @@
-class HomeController < SimpleController
+class HomeController < ActionController::Base
+  layout 'skeleton'
 
   def index
-    if not User.all.blank?
+    if ! User.all.blank?
       redirect_to needs_path
     end
   end

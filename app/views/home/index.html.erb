@@ -1,9 +1,3 @@
 <h1>Welcome to your new Maslow installation!</h1>
 
-<p>If you're on Heroku, add the first user with:</p>
-
-<pre>
-heroku run bin/rake \
-  "users:create_first_user[Yourname,your_email@example.org,your_password]" \
-  --app your-heroku-app-name
-</pre>
+ <%= link_to 'Click here to add the first admin user', new_settings_user_path %>

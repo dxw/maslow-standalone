@@ -1,6 +1,15 @@
 class Settings::UsersController < Settings::BaseController
   expose(:users)
   expose(:user)
+  skip_before_filter :authorize_settings_access, :if => Proc.new {
+    welcome_mode
+  } 
+  skip_before_action :authenticate_user!, :if => Proc.new {
+    welcome_mode
+  } 
+  layout :choose_layout
+  skip_authorization_check
+
 
   def index
   end
@@ -33,5 +42,17 @@ private
 
   def update_params
     params.require(:user).permit(:name, :email, roles: [])
+  end
+
+  def choose_layout
+    if welcome_mode
+      'skeleton'
+    else
+      'settings/layouts/settings'
+    end
+  end
+
+  def welcome_mode
+    ! User.any?
   end
 end
