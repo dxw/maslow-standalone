@@ -2,7 +2,7 @@
   "name": "Maslow",
   "description": "With which to create and manage user needs.",
   "repository": "https://github.com/crossgovernmentservices/maslow-standalone",
-  "logo": "https://raw.githubusercontent.com/crossgovernmentservices/maslow-standalone/master/app/assets/images/logo.svg",
+  "logo": "https://raw.githubusercontent.com/alphagov/govuk_template/master/source/assets/images/gov.uk_logotype_crown.png",
   "keywords": ["ruby", "rails", "postgresql"],
   "addons": [
     "heroku-postgresql:hobby-dev"
