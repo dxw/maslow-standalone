@@ -19,7 +19,11 @@ class NeedsController < ApplicationController
     @bookmarks = current_user.bookmarks
     @current_page = needs_path
 
-    @needs = apply_scopes(Need).page(params[:page])
+    if request.format == "csv"
+      @needs = apply_scopes(Need).all
+    else
+      @needs = apply_scopes(Need).page(params[:page])
+    end
 
     respond_to do |format|
       format.html
