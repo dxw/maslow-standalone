@@ -13,12 +13,6 @@
 
   <%= f.inputs "Provide evidence for this need", :id => "evidence" do %>
     <p class="hint-text">This helps us understand how important this need is in context of all the needs GOV.UK meets.</p>
-    <%= f.input :legislation,
-      :label => "What legislation underpins this need? <br/><span class='optional'>(optional)</span>".html_safe,
-      :hint => "Please supply a URL, e.g. on legislation.gov.uk",
-      :as => :text,
-      :input_html => { :class => 'input-md-8', :rows => 3 }
-    %>
     <%= f.input :yearly_user_contacts,
       :label => "Roughly how many user contacts do you get about this need per year <br/><span class='optional'>(optional)</span>".html_safe,
       :hint => "Include calls to contact centres, emails, customer service tickets, etc.",
@@ -49,6 +43,12 @@
       :label => "Impact if need is not met. <br/><span class='optional'>(optional)</span>".html_safe,
       :as => :select,
       :collection => Impact.pluck(:description, :id)
+    %>
+    <%= f.input :why_impact,
+      :label => "Why does it have this level of impact?<br/><span class='optional'>(optional)</span>".html_safe,
+      :hint => "Why is this the impact if the need isn't met?",
+      :as => :text,
+      :input_html => { :class => 'input-md-8', :rows => 3 }
     %>
   <% end %>
 
