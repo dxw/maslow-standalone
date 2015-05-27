@@ -18,6 +18,8 @@ class DecisionsController < ApplicationController
     decision.user = current_user
 
     if decision.save
+      need.touch
+      need.save
       redirect_to need_path(need)
     else
       render action: :new

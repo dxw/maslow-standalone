@@ -16,6 +16,8 @@ class NotesController < ApplicationController
     )
 
     if note.save
+      need.touch
+      need.save
       flash.notice = "Note saved"
     else
       flash.alert = "Note must not be blank"

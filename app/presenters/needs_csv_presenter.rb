@@ -26,11 +26,12 @@ class NeedsCsvPresenter
     [@base_url+"/#{need.need_id}",
      need.role,
      need.goal,
-     need.benefit] + need.met_when.to_a
+     need.benefit,
+     need.updated_at] + need.met_when.to_a
   end
 
   def csv_fields(length)
-    ["Maslow URL", "As a", "I need to", "So that"] + acceptance_field_names(length)
+    ["Maslow URL", "As a", "I need to", "So that", "Updated at"] + acceptance_field_names(length)
   end
 
   def acceptance_field_names(length)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526125722) do
+ActiveRecord::Schema.define(version: 20150527085919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,18 +40,20 @@ ActiveRecord::Schema.define(version: 20150526125722) do
   end
 
   create_table "needs", force: :cascade do |t|
-    t.string  "role",                              null: false
-    t.string  "goal",                              null: false
-    t.string  "benefit",                           null: false
-    t.text    "met_when",             default: [],              array: true
-    t.string  "other_evidence"
-    t.integer "canonical_need_id"
-    t.integer "yearly_user_contacts"
-    t.integer "yearly_site_views"
-    t.integer "yearly_need_views"
-    t.integer "yearly_searches"
-    t.integer "impact_id"
-    t.string  "why_impact"
+    t.string   "role",                              null: false
+    t.string   "goal",                              null: false
+    t.string   "benefit",                           null: false
+    t.text     "met_when",             default: [],              array: true
+    t.string   "other_evidence"
+    t.integer  "canonical_need_id"
+    t.integer  "yearly_user_contacts"
+    t.integer  "yearly_site_views"
+    t.integer  "yearly_need_views"
+    t.integer  "yearly_searches"
+    t.integer  "impact_id"
+    t.string   "why_impact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "needs", ["impact_id"], name: "index_needs_on_impact_id", using: :btree

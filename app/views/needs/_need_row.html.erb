@@ -8,6 +8,7 @@
       </button>
     <% end %>
   </td>
+  <td><%= need.updated_at %></td>
   <td><%= link_to need.need_id, need_path(need) %></td>
   <td><%= link_to format_need_goal(need.goal), need_path(need) %></td>
 </tr>
