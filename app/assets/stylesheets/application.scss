@@ -20,6 +20,8 @@
 @import "mixins";
 @import "maslow_theme";
 
+@import "colours";
+
 @import "base";
 
 // Alternate layouts
@@ -34,6 +36,7 @@
 @import 'elements/feeds';
 
 @import 'elements/faux-details';
+@import 'elements/filter';
 
 // Views
 @import "header/project-navigation";

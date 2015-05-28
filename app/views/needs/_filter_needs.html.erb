@@ -1,5 +1,5 @@
-<section class="js-faux-details">
-  <h2>Filter by tag</h2>
+<section class="js-faux-details filter <%= @filtered %>">
+  <h2 class="filter__head">Filter by tag</h2>
 
 <%= form_tag(:controller => "needs", :action => "filter") do %>
 

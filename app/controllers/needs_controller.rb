@@ -25,6 +25,10 @@ class NeedsController < ApplicationController
       @needs = apply_scopes(Need).page(params[:page])
     end
 
+    if request.query_parameters.has_key?("tag_id")
+      @filtered = "filter--active"
+    end
+
     respond_to do |format|
       format.html
       format.csv do
