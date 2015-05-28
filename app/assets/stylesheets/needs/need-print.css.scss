@@ -1,0 +1,228 @@
+.need-columns {
+  border: 1px solid black;
+  .need, .activity {
+    padding: 20px;
+  }
+  .need {
+    left: 0;
+    background: $primary-color;
+    color: #fff;
+    font-size: 19px;
+  }
+  .activity {
+    right: 0;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+}
+
+.need-actions {
+  display: none;
+}
+
+.the-need {
+  margin: 15px 5% 50px 0;
+  font-size: xx-large;
+  line-height: 1.31579;
+
+  em {
+    font-style: normal;
+  }
+}
+
+.need-tags {
+  margin: 50px 0;
+  padding: 0;
+
+  > li {
+    list-style: none;
+    margin: 0 0 4px;
+
+    ul, h3 {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 1.3;
+    }
+
+    h3 {
+      width: 25%;
+      margin: 0;
+    }
+
+    ul {
+      padding-left: 10px;
+
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+.met-when {
+  margin: 50px 0;
+}
+
+.need-decisions {
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.need-status {
+  margin: 15px 0 0;
+  padding: 0;
+
+  li {
+    font-size: 15px;
+    list-style: none;
+    display: block;
+    padding: 6px 12px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: auto;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    h3, span, a {
+      display: inline-block;
+      font-size: 15px;
+    }
+
+    h3 {
+      width: 35%;
+      font-weight: bold;
+      margin: 7px 0 0;
+    }
+    span {
+      width: 20%;
+    }
+    .no-decision {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    a {
+      color: $inverse-text-color;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: block;
+      text-decoration: none;
+      font-size: 13px;
+      float: right;
+
+      &:hover {
+        background: $header-border-color;
+        color: #fff;
+      }
+
+      .icon {
+        @extend .glyphicon;
+        @extend .glyphicon-pencil;
+        padding-right: 4px;
+        font-size: 11px;
+        width: auto;
+      }
+    }
+
+    &.decision_red {
+      background: #dc1414;
+    }
+    &.decision_green {
+      background: #23be04;
+    }
+  }
+}
+
+.closed-need {
+  margin: 20px 0;
+
+  .message {
+    padding: 14px;
+    background: #e74646;
+    color: #fff;
+
+    h2 {
+      margin: 0 0 7px;
+      font-size: 23px;
+    }
+    p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .reopen-action {
+    background: $header-border-color;
+    padding: 8px 8px 8px 14px;
+    overflow: auto;
+
+    p {
+      font-size: 17px;
+      padding: 6px 0 0;
+      margin: 0;
+      float: left;
+    }
+
+    input[type='submit'] {
+      @extend .btn;
+      @extend .btn-primary;
+      float: right;
+    }
+  }
+}
+
+.need-organisations {
+  @extend .muted;
+  font-size: 19px;
+  line-height: 1.31579 !important;
+  margin-bottom: 5px;
+}
+
+.need-wrapper {
+  p, ul, li {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+.impact {
+  padding: 0.1em 0 0.1em 1em;
+  background-repeat: no-repeat;
+  background-image: url("icon-important.png");
+  @include image-2x( "icon-important@2x.png", 34px, 34px);
+}
+
+.impact p {
+  padding: 0 1em 0 2em;
+  font-weight: bold;
+}
+
+.big-number {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 90px;
+  color: $hm-government;
+  margin-bottom: 30px;
+}
+
+.big-number-detail {
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: normal;
+  display: block;
+  color: #000;
+}
+
+p.all-organisations {
+  @extend .alert;
+  @extend .alert-info;
+}
