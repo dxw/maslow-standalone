@@ -1,0 +1,70 @@
+// doing <details> without using <details> aaaaaaaaaaargh :S
+$link-hover-colour: #2E8ACA;
+$yellow: #FFBF47;
+$black: #0B0C0C;
+
+.js-enabled {
+
+  .js-faux-details > :first-child {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0;
+    padding-left: 0.8em;
+    
+    &:hover {
+      color: $link-hover-colour;
+
+      &:before {
+        border-left: 0.4em solid $link-hover-colour;
+      }
+    }
+
+    &:focus {
+      outline: 3px solid $yellow;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      border-top: (0.4em * 0.866) solid transparent;
+      border-right: 0.4 solid transparent;
+      border-bottom: (0.4em * 0.866) solid transparent;
+      border-left: 0.4em solid $black;
+    }
+
+  }
+
+  .js-faux-details-wrapper {
+    display: none;
+    margin-bottom: em(25, 19);
+    padding-left: 15px;
+
+//    @include media(tablet) {
+//      margin-bottom: em(45, 19 );
+//    }
+  }
+
+  .js-faux-details--open {
+
+    & > :first-child:before {
+      top: 0.35em;
+      border-top: 0.4em solid $black;
+      border-right: (0.4em * 0.866) solid transparent;
+      border-bottom: 0.4em solid transparent;
+      border-left: (0.4em * 0.866) solid transparent;
+    }
+
+    & > :first-child:hover:before {
+      border-top: 0.4em solid $link-hover-colour;
+      border-left: (0.4em * 0.866) solid transparent;
+    }
+
+    .js-faux-details-wrapper {
+      display: block;
+    }
+
+  }
+
+}
