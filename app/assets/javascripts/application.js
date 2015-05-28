@@ -15,11 +15,17 @@
 //= require chosen-jquery
 //= require autosize
 //= require bootstrap
+//= require faux-details
 //= require_tree .
 
 $(function(){
+  $('body').addClass('js-enabled');
+
   $('#decide-on-need-button').
     attr('href', '#decide-on-need-modal').
     attr('data-toggle', 'modal').
     attr('role', 'button');
+
+  // Initiate any faux-details
+  Maslow.fauxDetails.init();
 });

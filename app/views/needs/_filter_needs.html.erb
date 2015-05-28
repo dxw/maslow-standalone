@@ -1,21 +1,27 @@
-<h2>Filter by tag</h2>
+<section class="js-faux-details">
+  <h2>Filter by tag</h2>
 
 <%= form_tag(:controller => "needs", :action => "filter") do %>
 
   <% TagType.all.each do |tag_type| %>
 
-  <%= label_tag(:q, tag_type.name) %>
+  <div class="form-group">
+  <%= label_tag(:tag_id, tag_type.name) %>
     <%= select_tag(
         :tag_id,
         options_from_collection_for_select(tag_type.tags, :id, :name, params[:tag_id]),
         multiple: true,
-        class: 'tags',
+        class: 'tags form-control',
         'data-module' => 'chosen',
         style: 'width: 100%'
       )
     %>
+  </div>
   <% end %>
 
-  <%= submit_tag("Filter", class: 'btn, btn-primary') %>
+  <div class="form-group">
+    <%= submit_tag("Filter", class: 'btn btn-primary') %>
+  </div>
 
 <% end %>
+</section>
