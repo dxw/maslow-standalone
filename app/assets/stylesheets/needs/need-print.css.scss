@@ -1,7 +1,10 @@
 .need-columns {
-  border: 1px solid black;
-  .need, .activity {
-    padding: 20px;
+  margin: 0px;
+  padding: 0px;
+  .need {
+  }
+  .activity {
+    display: none;
   }
   .need {
     left: 0;
@@ -32,8 +35,10 @@
   }
 }
 
+.need-tags::before {
+  content: "Tags"
+}
 .need-tags {
-  margin: 50px 0;
   padding: 0;
 
   > li {
@@ -62,13 +67,10 @@
 }
 
 .met-when {
-  margin: 50px 0;
 }
 
 .need-decisions {
-  display: block;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  display: none; 
 }
 
 .need-status {
@@ -207,18 +209,10 @@
 }
 
 .big-number {
-  font-size: 80px;
-  font-weight: bold;
-  line-height: 90px;
   color: $hm-government;
-  margin-bottom: 30px;
 }
 
 .big-number-detail {
-  font-size: 19px;
-  line-height: 1.25;
-  font-weight: normal;
-  display: block;
   color: #000;
 }
 
