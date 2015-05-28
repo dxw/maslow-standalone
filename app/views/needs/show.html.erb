@@ -45,7 +45,7 @@
           <h3><%= tag_type.name %>:</h3>
           <ul>
             <% need.tags_of_type(tag_type).each do |tag| %>
-              <li><%= tag.name %></li>
+              <li><a href="/needs?tag_id%5B%5D=<%= tag.id %>"><%= tag.name %></a></li>
             <% end %>
           </ul>
         </li>
