@@ -1,0 +1,11 @@
+<% content_for :page_title, "Search needs" %>
+
+<h1 class="page-title-with-border">Search needs</h1>
+
+<form method="GET">
+Query: <input type="text" name="q" value="<%= params[:q] %>">
+</form>
+<hr>
+<% if @needs %>
+<%= render partial: "/needs/collection" %>
+<% end %>
