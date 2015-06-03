@@ -28,6 +28,9 @@
           <li <% if current_page?(bookmarks_path) %> class="active" <% end %>>
             <%= link_to "Bookmarked needs", bookmarks_path %>
           </li>
+          <li <% if current_page?(search_find_need_path) %> class="active" <% end %>>
+            <%= link_to "Search", search_find_need_path %>
+          </li>
         </ul>
       </nav>
 
