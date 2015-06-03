@@ -7,7 +7,11 @@ class SearchController < ApplicationController
     @bookmarks = current_user.bookmarks
 
     if request.query_parameters.has_key?("q")
-      @needs = Search.search params[:q]
+      begin
+        @needs = Search.search params[:q]
+      rescue
+        @message = 'Invalid query'
+      end
     end
   end
 end
