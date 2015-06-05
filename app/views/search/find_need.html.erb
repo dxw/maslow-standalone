@@ -10,14 +10,18 @@ Query: <input type="text" name="q" value="<%= params[:q] %>">
   <em>Hint:</em>
   | means OR
   e.g. "blue | red"
-  , & means AND
-  e.g. "civil & expenses"
+  , &mp; means AND
+  e.g. "civil &amp; expenses"
   or combine them
-  e.g. "civil | (expense & travel)"
+  e.g. "civil | (expense &amp; travel)"
+  ! means NOT
+  e.g. "civil &amp; ! financial"
 </div>
 </form>
 <hr>
 <% if @needs %>
+<h2><%= @needs.size %> results </h2>
+<hr>
 <%= render partial: "/needs/collection" %>
 <% end %>
 
