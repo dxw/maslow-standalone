@@ -1,0 +1,44 @@
+// The base css you write should be for mobile. You can
+// then add desktop styles on top.
+//
+// Breakpoint variables for desktop, tablet and mobile
+// need to be set before using this mixin
+//
+// Usage:
+//
+//   div.columns {
+//     border: 1px solid;
+//
+//     @include media(desktop){
+//       width: 30%;
+//       float: left;
+//     }
+//   }
+//
+@mixin media($size: false, $max-width: false, $min-width: false) {
+  @if $size == desktop {
+    @media (min-width: $desktop_bp){
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: $tablet_bp){
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: $mobile_bp){
+      @content;
+    }
+  } @else if $max-width != false {
+    @media (max-width: $max-width){
+      @content;
+    }
+  } @else if $min-width != false {
+    @media (min-width: $min-width){
+      @content;
+    }
+  } @else {
+    @media (min-width: $size){
+      @content
+    }
+  }
+}
