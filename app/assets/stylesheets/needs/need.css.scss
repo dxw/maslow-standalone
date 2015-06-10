@@ -1,12 +1,16 @@
 .need-columns {
   .need, .activity {
-    position: absolute;
-    width: 50%;
-    top: 0;
-    bottom: 0;
-    padding: 20px;
-    height: 100%;
-    overflow: scroll;
+    padding: 5px;
+
+    @include media(desktop) {
+      position: absolute;
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      padding: 20px;
+      height: 100%;
+      overflow: scroll;
+    }
   }
   .need {
     left: 0;

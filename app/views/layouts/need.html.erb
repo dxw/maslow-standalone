@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <%= stylesheet_link_tag "application", :media => "screen" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+  <%= yield :extra_headers %>
+
+  <title><%= content_for?(:page_title) ? yield(:page_title) + " | " : "" %><%= app_title %></title>
+</head>
+<body class="need">
+  <%= render partial: 'shared/flash' %>
+
+  <%= content_for?(:content) ? yield(:content) : yield %>
+</body>
+</html>
