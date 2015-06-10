@@ -27,11 +27,11 @@
       </ul>
     </nav>
 
-    <header class="the-need">
-      As a <em><%= need.role %></em><br />
-      I need to <em><%= need.goal %></em><br />
-      So that <em><%= need.benefit %></em>
-    </header>
+    <dl class="the-need">
+      <dt>As a</dt><dd><%= need.role %></dd>
+      <dt>I need to</dt><dd><%= need.goal %></dd>
+      <dt>So that</dt><dd><%= need.benefit %></dd>
+    </dl>
 
     <% if need.closed? %>
       <%= render partial: 'need_closed_message' %>

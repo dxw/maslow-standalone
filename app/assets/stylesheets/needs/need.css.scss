@@ -79,13 +79,39 @@
   }
 }
 
+// consider making a reusable .description-inline class
+// that can be used elsewhere
 .the-need {
-  margin: 15px 5% 50px 0;
-  font-size: 30px;
-  line-height: 1.31579;
+  @extend %contain-floats;
+  margin: 15px 5px 50px 0;
 
-  em {
-    font-style: normal;
+  dt {
+    clear: left;
+    float: left;
+    margin-right: 0.5em;
+    font-size: 19px;
+    font-weight: normal;
+  }
+  dd {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  dt, dd {
+    line-height: 30px;
+  }
+
+  @include media(desktop) {
+    margin-right: 15px;
+
+    dt {
+      font-size: 24px;
+      margin-top: 12px;
+      line-height: 1em;
+    }
+    dd {
+      font-size: 36px;
+      line-height: 40px;
+    }
   }
 }
 

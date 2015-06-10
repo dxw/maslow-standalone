@@ -1,0 +1,13 @@
+// Contain floats usage:
+//
+// .this-has-floated-children {
+//  @extend %contain-floats;
+// }
+%contain-floats {
+  *zoom: 1; // IE 6 & 7 only
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
