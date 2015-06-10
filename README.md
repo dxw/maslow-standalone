@@ -28,6 +28,16 @@ Note the app also comes with a Dockerfile, with an [example docker-compose confi
     # Starts the Maslow server
     foreman start
 
+### Running tests
+
+Prepare the test database once:
+
+    docker-compose run --rm maslow bin/rake db:test:prepare
+
+Run the tests with:
+
+    docker-compose run --rm maslow bin/rake spec
+
 ## Getting started on Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

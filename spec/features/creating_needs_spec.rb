@@ -24,9 +24,12 @@ RSpec.describe 'creating needs', type: :feature do
     first(:button, "Save").click
 
     within '.the-need' do
-      expect(page).to have_content('As a Capybara')
-      expect(page).to have_content('I need to create a user need')
-      expect(page).to have_content('So that I can check that this works')
+      expect(page).to have_content('As a')
+      expect(page).to have_content('Capybara')
+      expect(page).to have_content('I need to')
+      expect(page).to have_content('create a user need')
+      expect(page).to have_content('So that')
+      expect(page).to have_content('I can check that this works')
     end
 
     within '.met-when' do
