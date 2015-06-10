@@ -110,3 +110,23 @@
   }
 
 }
+
+.needs__table {
+  @include media($max-width: $tablet_bp) {
+    tbody tr td:first-child {
+      padding: 0;
+
+      .glyphicon:before {
+        font-size: 19px;
+      }
+
+      .btn {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 6px 10px;
+      }
+    }
+  }
+}
