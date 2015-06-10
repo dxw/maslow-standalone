@@ -1,4 +1,6 @@
 Maslow::Application.routes.draw do
+  get 'search/find_need'
+
   get "/healthcheck" => Proc.new { [200, {"Content-type" => "text/plain"}, ["OK"]] }
 
   devise_for :users,

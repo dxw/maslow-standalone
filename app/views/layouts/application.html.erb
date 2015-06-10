@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "screen" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
   <%= yield :extra_headers %>
@@ -26,6 +27,9 @@
           </li>
           <li <% if current_page?(bookmarks_path) %> class="active" <% end %>>
             <%= link_to "Bookmarked needs", bookmarks_path %>
+          </li>
+          <li <% if current_page?(search_find_need_path) %> class="active" <% end %>>
+            <%= link_to "Search", search_find_need_path %>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,30 @@
+<% content_for :page_title, "Search needs" %>
+
+<h1 class="page-title-with-border">Search needs</h1>
+
+<form method="GET">
+Query: <input type="text" name="q" value="<%= params[:q] %>">
+
+<div class="text-muted">
+
+  <em>Hint:</em>
+  | means OR
+  e.g. "blue | red"
+  , &amp; means AND
+  e.g. "civil &amp; expenses"
+  or combine them
+  e.g. "civil | (expense &amp; travel)"
+  <!--
+  ! means NOT
+  e.g. "civil &amp; ! financial"
+  -->
+</div>
+</form>
+<hr>
+<% if @needs %>
+<h2><%= @needs.size %> results </h2>
+<hr>
+<%= render partial: "/needs/collection" %>
+<% end %>
+
+<h2 class="text-danger"><%= @message %></h2>
