@@ -119,8 +119,12 @@
   }
 }
 
-.need-tags {
+.need-tags,
+.met-when {
   margin: $gutter 0;
+}
+
+.need-tags {
   padding: 0;
 
   a {
@@ -155,10 +159,6 @@
       }
     }
   }
-}
-
-.met-when {
-  margin: 50px 0;
 }
 
 .need-decisions {
