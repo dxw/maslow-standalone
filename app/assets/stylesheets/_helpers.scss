@@ -1,3 +1,6 @@
+// Helpers
+// ==========================================================================
+
 // Contain floats usage:
 //
 // .this-has-floated-children {
@@ -10,4 +13,21 @@
     display: block;
     clear: both;
   }
+}
+
+// Hide, but not for screenreaders
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// Hide, only when JavaScript is enabled
+.js-enabled .js-hidden {
+  display: none;
 }

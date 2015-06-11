@@ -43,6 +43,7 @@ header.app-header {
       display: block;
       height: 50px;
       padding-top: 11px;
+      color: #fff;
 
       .logo, .instance-name, .dropdown-icon {
         display: inline-block;
@@ -54,11 +55,6 @@ header.app-header {
         color: $header-color;
         font-size: 24px;
         text-align: center;
-
-        span {
-          display: none;
-        }
-
         width: 30px;
         height: 30px;
         margin: 0 5px 0 0;
@@ -71,7 +67,6 @@ header.app-header {
       }
 
       .instance-name {
-        color: #fff;
         font-weight: bold;
         font-size: 18px;
         margin-top: 3px;
@@ -81,7 +76,6 @@ header.app-header {
         @extend .glyphicon;
         @extend .glyphicon-menu-down;
 
-        color: #fff;
         margin: 8px 6px;
 
         /* hide this by default - it will be shown by JavaScript */
