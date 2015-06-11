@@ -6,7 +6,11 @@
   clear: both;
   border-left: 4px solid #BFC1C3;
   padding: 10px 0 10px $gutter-half;
-  margin: $gutter-half 0 $gutter-half $gutter-half;
+  margin: $gutter-half 0 $gutter-half 5px;
+
+  @include media(tablet) {
+    margin-left: $gutter-half;
+  }
 
   // Remove bottom margin on last paragraph
   p:only-child,
