@@ -10,5 +10,7 @@
   </td>
   <td><%= link_to need.need_id, need_path(need) %></td>
   <td><%= link_to format_need_goal(need.goal), need_path(need) %></td>
-  <td><%= need.updated_at %></td>
+  <td <%= "data-updated-timestamp="+need.updated_at.strftime("%Y-%m-%dT%H:%M:%S%z") if need.updated_at? %>>
+    <%= need.updated_at.strftime("%d-%m-%Y %H:%M:%S") if need.updated_at? %>
+  </td>
 </tr>

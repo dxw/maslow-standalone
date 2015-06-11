@@ -16,16 +16,27 @@
 //= require autosize
 //= require bootstrap
 //= require faux-details
+//= require moment.min
 //= require_tree .
 
-$(function(){
-  $('body').addClass('js-enabled');
+(function($, moment) {
+  $(function(){
+    $('body').addClass('js-enabled');
 
-  $('#decide-on-need-button').
-    attr('href', '#decide-on-need-modal').
-    attr('data-toggle', 'modal').
-    attr('role', 'button');
+    $('#decide-on-need-button').
+      attr('href', '#decide-on-need-modal').
+      attr('data-toggle', 'modal').
+      attr('role', 'button');
 
-  // Initiate any faux-details
-  Maslow.fauxDetails.init();
-});
+    // Initiate any faux-details
+    Maslow.fauxDetails.init();
+
+    // use pretty dates for the updated time
+    $("[data-updated-timestamp]").each(function(ind) {
+      var $me = $(this),
+          timestamp = $me.data('updated-timestamp');
+
+      $me.text( moment( timestamp ).fromNow() );
+    });
+  });
+}(jQuery, moment));
