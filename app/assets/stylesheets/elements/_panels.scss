@@ -1,0 +1,16 @@
+// Panels
+// ==========================================================================
+
+.panel-indent {
+  @extend %contain-floats;
+  clear: both;
+  border-left: 4px solid #BFC1C3;
+  padding: 10px 0 10px $gutter-half;
+  margin: $gutter-half 0 $gutter-half $gutter-half;
+
+  // Remove bottom margin on last paragraph
+  p:only-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

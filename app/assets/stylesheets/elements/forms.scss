@@ -5,3 +5,39 @@
     width: 50%;
   }
 }
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.form-hint {
+  display: block;
+  color: #6f777b;
+  font-weight: normal;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #bfc1c3;
+  padding: 4px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+
+  @include media(tablet) {
+    width: 50%;
+  }
+}
+
+.form-help {
+  summary {
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

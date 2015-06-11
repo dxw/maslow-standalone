@@ -3,22 +3,30 @@
 <h1 class="page-title-with-border">Search needs</h1>
 
 <form method="GET">
-Query: <input type="text" name="q" value="<%= params[:q] %>">
+  <label for="" class="form-label">
+    Keyword search
+    <span class="form-hint">For example by acceptance criteria, comments or user need</span>
+  </label>
+  <input class="form-control" type="text" name="q" value="<%= params[:q] %>">
 
-<div class="text-muted">
+  <details class="form-help">
+    <summary>Advanced syntax</summary>
+    <div class="text-muted panel-indent">
+      <ul>
+        <li>| means OR
+        e.g. "blue | red"</li>
+        <li>&amp; means AND
+          e.g. "civil &amp; expenses"</li>
+        <li>  or combine them
+          e.g. "civil | (expense &amp; travel)"</li>
+      </ul>
+      <!--
+      ! means NOT
+      e.g. "civil &amp; ! financial"
+      -->
+    </div>
+  </details>
 
-  <em>Hint:</em>
-  | means OR
-  e.g. "blue | red"
-  , &amp; means AND
-  e.g. "civil &amp; expenses"
-  or combine them
-  e.g. "civil | (expense &amp; travel)"
-  <!--
-  ! means NOT
-  e.g. "civil &amp; ! financial"
-  -->
-</div>
 </form>
 <hr>
 <% if @needs %>
