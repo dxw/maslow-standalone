@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require faux-details
 //= require moment.min
+//= require Autolinker.min
 //= require_tree .
 
 (function($, moment) {
@@ -37,6 +38,16 @@
           timestamp = $me.data('updated-timestamp');
 
       $me.text( moment( timestamp ).fromNow() );
+    });
+
+    // autolink links in notes
+    var autolinker = new Autolinker({
+      newWindow: false,
+      hashtag: 'twitter'
+    });
+    $("p.note").each(function(idx) {
+      var $me = $(this);
+      $me.html(autolinker.link($me.text()));
     });
   });
 }(jQuery, moment));
