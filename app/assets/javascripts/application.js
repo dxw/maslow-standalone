@@ -43,7 +43,19 @@
     // autolink links in notes
     var autolinker = new Autolinker({
       newWindow: false,
-      hashtag: 'twitter'
+      // this just enables the hashtag feature. See replaceFn for actual behaviour.
+      hashtag: 'twitter',
+      replaceFn: function( autolinker, match ) {
+        switch( match.getType() ) {
+          case 'url': return true;
+          case 'email': return true;
+          case 'phone': return true;
+          case 'twitter': return true;
+          case 'hashtag':
+            var hashtag = match.getHashtag();
+            return '<a href="/search/find_need?q=' + hashtag + '">#' + hashtag + '</a>';
+        } 
+      }
     });
     $("p.note").each(function(idx) {
       var $me = $(this);
