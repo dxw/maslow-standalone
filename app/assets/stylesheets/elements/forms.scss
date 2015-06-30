@@ -41,3 +41,13 @@
     }
   }
 }
+
+// dealing with the devise plugin login form output
+.login {
+  .form-control,
+  .form-group {
+    @include media(tablet) {
+      width: 100%;
+    }
+  }
+}
