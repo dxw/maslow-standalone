@@ -4,7 +4,7 @@ namespace :users do
   task :create_first_user, [:name, :email, :password] => :environment do |t, args|
     name = args[:name]
     email = args[:email]
-    password = args[:password]
+   password = args[:password]
 
     create_first_user(name, email, password)
   end

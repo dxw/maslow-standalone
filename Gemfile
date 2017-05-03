@@ -1,7 +1,7 @@
-ruby '2.1.5'
+ruby '2.4.0'
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.2.8'
 
 gem 'pg'
 
@@ -17,7 +17,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner', require: false
   gem 'factory_girl_rails'
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.5.0'
   gem 'timecop'
 end
 
