@@ -164,7 +164,6 @@
 .need-decisions {
   display: block;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
 }
 
 .need-status {
@@ -277,7 +276,6 @@
 }
 
 .need-organisations {
-  @extend .muted;
   font-size: 19px;
   line-height: 1.31579 !important;
   margin-bottom: 5px;
