@@ -39,7 +39,23 @@
           </div>
         </div>
       <% end %>
-      <%= f.submit "Enter another criteria", :name => "criteria_action", :class => "btn btn-default add-label-margin" %>
+      <%= f.submit "Enter another criteria", :id=> "criteria_action", :name => "criteria_action", :class => "btn btn-default add-label-margin" %>
     </div>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#met-when-criteria .form-control').keypress(function(e) {
+      if (e.which == 13) {
+        $('#criteria_action')[0].click();
+        e.preventDefault();
+      };
+    });
+
+    <% if params[:criteria_action].present? %>
+      // Select last form field
+      $('#met-when-criteria .form-control:last')[0].focus();
+    <% end %>
+  });
+</script>
