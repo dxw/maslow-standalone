@@ -2,14 +2,14 @@
   display: block;
 
   @include media(desktop) {
-    width: 50%;
+    // width: 50%;
   }
 }
 
 .form-label {
   display: block;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 22px;
 }
 
 .form-hint {
@@ -17,7 +17,7 @@
   color: #6f777b;
   font-weight: normal;
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .form-control {

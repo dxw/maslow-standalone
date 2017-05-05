@@ -86,8 +86,15 @@
   margin: $gutter 5px $gutter 0;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  padding-top: $gutter-half;
-  padding-bottom: $gutter-half;
+  padding: $gutter-half;
+
+  border: 4px solid #000;
+  font-size: 24px;
+
+  em {
+    font-weight: bold;
+    font-style: normal;
+  }
 
   dt {
     clear: left;
