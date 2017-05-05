@@ -31,7 +31,7 @@ gem 'chosen-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 
-gem 'unicorn'
+gem 'puma'
 gem 'formtastic', '~> 3.1.2'
 gem 'formtastic-bootstrap', '~> 3.1.0'
 gem 'decent_exposure'

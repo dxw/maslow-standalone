@@ -125,7 +125,6 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.9.3)
     link_header (0.0.8)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -144,6 +143,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.1)
     phantomjs (1.9.8.0)
+    puma (3.8.2)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -176,7 +176,6 @@ GEM
       activesupport (= 4.2.8)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.13.0)
     rake (12.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -221,10 +220,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.8.3)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.0.0)
@@ -259,13 +254,13 @@ DEPENDENCIES
   link_header (= 0.0.8)
   lrucache (= 0.1.4)
   pg
+  puma
   rails (~> 4.2.8)
   rails_12factor
   rspec-rails (~> 3.5.0)
   sass-rails (~> 4.0.5)
   timecop
   uglifier (>= 1.0.3)
-  unicorn
   web-console (~> 2.0)
 
 RUBY VERSION
