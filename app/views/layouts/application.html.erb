@@ -7,6 +7,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
   <%= yield :extra_headers %>
+  <%= favicon_link_tag %>
+  <%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
 
   <title><%= content_for?(:page_title) ? yield(:page_title) + " | " : "" %><%= app_title %></title>
 </head>
