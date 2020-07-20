@@ -5,7 +5,7 @@ gem 'rails', '~> 4.2.0'
 
 gem 'pg'
 
-gem 'kaminari', '0.14.1'
+gem 'kaminari', '1.2.1'
 gem 'airbrake', '~> 4.1.0'
 gem 'cancan', '1.6.10'
 gem 'lrucache', '0.1.4'
